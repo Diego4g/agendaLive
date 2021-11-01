@@ -1,4 +1,4 @@
-import { LiveRepository } from "../repositories/LiveRepository";
+import { LiveRepository } from "../repositories/implementations/LiveRepository";
 import { CreateLiveController } from "./CreateLiveController";
 import { CreateLiveUseCase } from "./CreateLiveUseCase";
 

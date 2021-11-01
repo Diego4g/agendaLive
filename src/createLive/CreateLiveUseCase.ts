@@ -1,4 +1,4 @@
-import { ILiveRepository } from "../repositories/implementations/ILiveRepository";
+import { ILiveRepository } from "../repositories/ILiveRepository";
 
 interface IRequest {
     nameLive: string;

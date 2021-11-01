@@ -1,4 +1,4 @@
-import { Live } from '../../model/Live'
+import { Live } from '../entities/Live'
 
 interface ICreateLiveDTO {
     nameLive: string;

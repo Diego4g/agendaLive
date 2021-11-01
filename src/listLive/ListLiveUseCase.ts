@@ -1,5 +1,5 @@
-import { ILiveRepository } from "../repositories/implementations/ILiveRepository";
-import { Live } from "../model/Live"
+import { ILiveRepository } from "../repositories/ILiveRepository";
+import { Live } from "../entities/Live"
 
 
 class ListLiveUseCase {

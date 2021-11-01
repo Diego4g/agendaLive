@@ -1,5 +1,5 @@
-import { Live } from "../model/Live"
-import { ICreateLiveDTO } from "./implementations/ILiveRepository";
+import { Live } from "../../entities/Live"
+import { ICreateLiveDTO } from "../ILiveRepository";
 
 
 
