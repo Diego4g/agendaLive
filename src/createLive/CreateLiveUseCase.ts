@@ -13,8 +13,8 @@ class CreateLiveUseCase {
 
     constructor(private livesRepository: ILiveRepository) { }
 
-    execute({ nameLive, nameChannel, urlLive, dateLive, hourLive }: IRequest): void {
-        const liveAlreadyExists = this.livesRepository.findByName(nameLive);
+    async execute({ nameLive, nameChannel, urlLive, dateLive, hourLive }: IRequest): Promise<void> {
+        const liveAlreadyExists = await this.livesRepository.findByName(nameLive);
 
         if (liveAlreadyExists) {
             throw new Error("Live já cadastrada!")

@@ -1,44 +1,37 @@
 import { Live } from "../../entities/Live"
-import { ICreateLiveDTO } from "../ILiveRepository";
+import { ICreateLiveDTO, ILiveRepository } from "../ILiveRepository";
 
+import { getRepository, Repository } from "typeorm"
 
+class LiveRepository implements ILiveRepository{
 
-class LiveRepository {
-    private lives: Live[];
+    private repository: Repository<Live>;
+
     private static INSTANCE: LiveRepository;
 
-    private constructor() {
-        this.lives = [];
+    constructor() {
+        this.repository = getRepository(Live);
     }
 
-    public static getInstance(): LiveRepository {
-        if (!LiveRepository.INSTANCE) {
-            LiveRepository.INSTANCE = new LiveRepository();
-        }
-
-        return LiveRepository.INSTANCE;
-    }
-
-    create({ nameLive, nameChannel, urlLive, dateLive, hourLive }: ICreateLiveDTO): void {
-        const live = new Live();
-        Object.assign(live, {
+    async create({ nameLive, nameChannel, urlLive, dateLive, hourLive }: ICreateLiveDTO): Promise<void> {
+        const live = this.repository.create({
             nameLive,
             nameChannel,
             urlLive,
             dateLive,
-            hourLive,
-        });
+            hourLive
+        })
+        await this.repository.save(live);
+    }
+    async list(): Promise<Live[]> {
+        const lives = await this.repository.find();
+        return lives;
+    }
 
-        this.lives.push(live);
-    }
-    list(): Live[] {
-        return this.lives;
-    }
-
-    findByName(name: string): Live {
-        const live = this.lives.find(live => live.nameLive === name);
-        return live;
-    }
+    async findByName(nameLive: string): Promise<Live> {
+        const live = await this.repository.findOne({nameLive});
+        return live
+    } 
 }
 
 export { LiveRepository }

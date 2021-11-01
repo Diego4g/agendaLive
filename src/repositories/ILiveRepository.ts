@@ -10,9 +10,9 @@ interface ICreateLiveDTO {
 
 
 interface ILiveRepository {
-    findByName(name: string): Live;
-    list(): Live[];
-    create({ nameLive, nameChannel, urlLive, dateLive, hourLive }: ICreateLiveDTO): void;
+    findByName(name: string): Promise<Live>;
+    list(): Promise<Live[]>;
+    create({ nameLive, nameChannel, urlLive, dateLive, hourLive }: ICreateLiveDTO): Promise<void>;
 }
 
 export { ILiveRepository, ICreateLiveDTO }

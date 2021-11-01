@@ -4,7 +4,7 @@ import { ListLiveUseCase } from "./ListLiveUseCase";
 
 
 
-const livesRepository = LiveRepository.getInstance();
+const livesRepository = null;
 
 const listLiveUseCase = new ListLiveUseCase(livesRepository);
 

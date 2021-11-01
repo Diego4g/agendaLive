@@ -3,11 +3,21 @@ import { CreateLiveController } from "./CreateLiveController";
 import { CreateLiveUseCase } from "./CreateLiveUseCase";
 
 
+export default(): CreateLiveController =>{
+    const livesRepository = new LiveRepository();
 
-const livesRepository = LiveRepository.getInstance();
+    const createLiveUseCase = new CreateLiveUseCase(livesRepository);
 
-const createLiveUseCase = new CreateLiveUseCase(livesRepository);
+    const createLiveController = new CreateLiveController(createLiveUseCase);
 
-const createLiveController = new CreateLiveController(createLiveUseCase);
+    return createLiveController
+}
 
-export { createLiveController }
+
+
+
+
+
+
+
+

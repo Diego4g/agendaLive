@@ -5,6 +5,7 @@
     "password": "123",
     "database": "agendaLive",
     "migrations": ["./src/database/migrations/*.ts"],
+    "entities": ["./src/entities/*.ts"],
     "cli":{ 
         "migrationsDir": "./src/database/migrations"
     }

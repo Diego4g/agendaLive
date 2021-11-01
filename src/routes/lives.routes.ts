@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createLiveController } from '../createLive/index';
+import createLiveController  from '../createLive/index';
 import { listLiveController } from '../listLive';
 
 
@@ -7,7 +7,7 @@ import { listLiveController } from '../listLive';
 const livesRoutes = Router();
 
 livesRoutes.post("/", (request, response) => {
-    return createLiveController.handle(request, response);
+    return createLiveController().handle(request, response);
 });
 
 livesRoutes.get("/", (request, response) => {
