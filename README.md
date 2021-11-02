@@ -4,7 +4,7 @@
 
 Com esta aplicação o usuário é capaz de cadastrar uma live com nome, link, nome do canal, horário e data. 
 
-A aplicação utiliza o **PostgreSQL** para armazenar as informações, portanto, para executa-la em sua máquina é necessário que voce possua o PosgtgreSQL instalado. A seguir será descrito a alteração que terá que ser feita para conectar a aplicação ao seu banco de dados local.
+A aplicação utiliza o **PostgreSQL** para armazenar as informações, portanto, para executa-la em sua máquina é necessário que voce possua o PostgreSQL instalado. A seguir será descrito a alteração que terá que ser feita para conectar a aplicação ao seu banco de dados local.
 
 ## Rotas da aplicação
 
