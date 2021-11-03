@@ -5,8 +5,8 @@ import { ListLiveUseCase } from "./ListLiveUseCase";
 class ListLiveController {
     constructor(private listLiveUseCase: ListLiveUseCase) { }
 
-    handle(request: Request, response: Response): Response {
-        const all = this.listLiveUseCase.execute();
+    async handle(request: Request, response: Response): Promise<Response> {
+        const all = await this.listLiveUseCase.execute();
 
         return response.json(all);
     }

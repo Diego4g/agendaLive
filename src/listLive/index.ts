@@ -4,10 +4,19 @@ import { ListLiveUseCase } from "./ListLiveUseCase";
 
 
 
-const livesRepository = null;
+export default(): ListLiveController =>{
+    const livesRepository = new LiveRepository();
 
-const listLiveUseCase = new ListLiveUseCase(livesRepository);
+    const listLiveUseCase = new ListLiveUseCase(livesRepository);
 
-const listLiveController = new ListLiveController(listLiveUseCase);
+    const listLiveController = new ListLiveController(listLiveUseCase);
 
-export { listLiveController }
+    return listLiveController
+
+}
+
+
+
+
+
+

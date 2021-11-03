@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import createLiveController  from '../createLive/index';
-import { listLiveController } from '../listLive';
+import listLiveController  from '../listLive';
 
 
 
@@ -11,7 +11,7 @@ livesRoutes.post("/", (request, response) => {
 });
 
 livesRoutes.get("/", (request, response) => {
-    return listLiveController.handle(request, response);
+    return listLiveController().handle(request, response);
 })
 
 export { livesRoutes }

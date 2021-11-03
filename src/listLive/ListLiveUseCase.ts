@@ -5,8 +5,8 @@ import { Live } from "../entities/Live"
 class ListLiveUseCase {
     constructor(private liveRepository: ILiveRepository) { }
 
-    execute(): Live[] {
-        const lives = this.liveRepository.list();
+    async execute(): Promise<Live[]> {
+        const lives = await this.liveRepository.list();
 
         return lives
     }
