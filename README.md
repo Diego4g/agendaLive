@@ -1,6 +1,6 @@
 # BackEnd - Agenda Live
 
-# Sobre
+## Sobre
 
 Com esta aplicação o usuário é capaz de cadastrar uma live com nome, link, nome do canal, horário e data. 
 
@@ -25,7 +25,7 @@ Esta rota é responsável por criar uma live. Para isso deverá ser passado um o
 
 ```
 
-### GET `/live` (em construção)
+### GET `/live` 
 
 Quando esta rota é chamada, ela retorna todas as lives cadastradas no banco de dados.
 
